@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import imgNotAvailable from '../assets/imgNotAvailable.svg';
 
 function ListOfItems() {
   const [items, setItems] = useState([]);
@@ -71,9 +72,16 @@ function ListOfItems() {
       
       )}
 
-      <div className="card-container" style={{width: isMob ? "100%" : "70%"}}>
+      <div className="card-container" 
+      style={{
+        width: isMob ? "100%" : "70%" , 
+        height: isMob ? "calc(100vh -  320px)" : "100vh"}}>
         {items.map((item, idx) => (
-          <div key={idx} className="card" onClick={() => setSelectedItem(item)}>
+          <div key={idx} 
+          style={{
+            backgroundColor: selectedItem === item ? "black" : "rgba(255, 255, 255, 0.1)",
+          }} 
+           className="card" onClick={() => setSelectedItem(item)}>
             <img
               src={item.avatar}
               onClick={() => setSelectedItem(item)}
@@ -89,9 +97,12 @@ function ListOfItems() {
             key={item.id}
             className="card"
             onClick={() => setSelectedItem(item)}
+            style={{
+              backgroundColor: selectedItem === item ? "black" : "rgba(255, 255, 255, 0.1)",
+            }} 
           >
             <img
-              src={item.avatar}
+              src={imgNotAvailable}
               alt={item.username}
               onClick={() => setSelectedItem(item)}
             />

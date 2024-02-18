@@ -30,17 +30,18 @@
 
 .card-container {
   overflow-y: scroll;
-  height: 100vh;
   padding: 20px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
+  max-height: 100svh;
   gap: 20px;
 }
 body{
   background-color: black;
 }
 .card {
-  background-color: #1e1e1e;
   border: 1px solid #c1c1c1;
   border-radius: 8px;
   padding: 20px;
@@ -89,6 +90,7 @@ body{
   min-width: 300px;
   padding: 20px;
   margin: 20px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
