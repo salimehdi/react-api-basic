@@ -75,7 +75,7 @@ function ListOfItems() {
       <div className="card-container" 
       style={{
         width: isMob ? "100%" : "70%" , 
-        height: isMob ? "calc(100vh -  320px)" : "100vh"}}>
+        height: isMob ? (selectedItem ? "calc(100vh -  320px)" : "100vh") : "100vh"}}>
         {items.map((item, idx) => (
           <div key={idx} 
           style={{
